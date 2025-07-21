@@ -1,0 +1,124 @@
+<!-- Contact Section -->
+<!-- templates/partials/contact.html -->
+
+<section id="contact" class="py-20 sm:py-24 scroll-mt-28">
+  <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+
+    <!-- Section Header -->
+    <div class="text-center">
+      <span class="inline-block bg-indigo-600/10 text-indigo-400 text-sm font-semibold px-4 py-1 rounded-full">Get In Touch</span>
+      <h2 class="text-5xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-indigo-500 to-purple-500" data-aos="zoom-in-up">Let's Connect</h2>
+      <p class="mt-4 text-lg text-gray-400 max-w-2xl mx-auto">
+        Got a project in mind? Drop me a message and let's create something amazing together!
+      </p>
+    </div>
+
+    <!-- Main Grid: Contact Info + Form -->
+    <div class="mt-16 grid grid-cols-1 lg:grid-cols-5 gap-8">
+
+      <!-- Left Column: Contact Information -->
+      <div class="lg:col-span-2 space-y-8">
+        <!-- Contact Info Card -->
+        <div class="bg-[#161a2c] p-8 rounded-2xl">
+          <h3 class="text-2xl font-bold text-white mb-6">Contact Information</h3>
+          <div class="space-y-6">
+            <!-- Email -->
+            <div class="flex items-start space-x-4">
+              <div class="bg-indigo-600/10 p-2 rounded-full">
+                <i data-lucide="mail" class="w-5 h-5 text-indigo-400"></i>
+              </div>
+              <div>
+                <h4 class="font-semibold text-lg">Email</h4>
+                <p class="text-gray-400">ud4yg@yandex.com</p>
+              </div>
+            </div>
+            <!-- Location -->
+            <div class="flex items-start space-x-4">
+              <div class="bg-indigo-600/10 p-2 rounded-full">
+                <i data-lucide="map-pin" class="w-5 h-5 text-indigo-400"></i>
+              </div>
+              <div>
+                <h4 class="font-semibold text-lg">Location</h4>
+                <p class="text-gray-400">Mumbai, Maharashtra, India</p>
+              </div>
+            </div>
+          </div>
+          <!-- Social Media -->
+<div class="mt-8 pt-6 border-t border-white/10">
+  <h4 class="font-semibold text-lg mb-4">Social Media</h4>
+  <div class="flex space-x-4">
+    
+<div class="flex space-x-4">
+  <a href="#" class="social-icon" aria-label="GitHub">
+    <i data-lucide="github" class="w-6 h-6"></i>
+  </a>
+  <a href="#" class="social-icon" aria-label="LinkedIn">
+    <i data-lucide="linkedin" class="w-6 h-6"></i>
+  </a>
+  <a href="#" class="social-icon" aria-label="Instagram">
+    <i data-lucide="instagram" class="w-6 h-6"></i>
+  </a>
+</div>
+</div>
+</div>
+        </div>
+        <!-- Response Time Card -->
+        <div class="bg-[#161a2c] p-8 rounded-2xl">
+          <h3 class="text-lg font-semibold">Response Time</h3>
+          <p class="text-gray-400 mt-2">I typically reply within 24 hours</p>
+        </div>
+      </div>
+
+      <!-- Right Column: Contact Form -->
+      <div class="lg:col-span-3">
+        <div class="bg-[#161a2c] p-8 rounded-2xl">
+          <form action="#" method="POST">
+            <div class="grid grid-cols-1 sm:grid-cols-2 gap-6">
+              <!-- Name Input -->
+              <div class="relative">
+                <label for="name" class="form-label">Your Name</label>
+                <i data-lucide="user" class="absolute left-4 top-1/2 -translate-y-1/2 w-5 h-5 text-gray-400"></i>
+                <input type="text" id="name" name="name" class="form-input" placeholder="Your Name" required>
+              </div>
+              <!-- Email Input -->
+              <div class="relative">
+                <label for="email" class="form-label">Email</label>
+                <i data-lucide="at-sign" class="absolute left-4 top-1/2 -translate-y-1/2 w-5 h-5 text-gray-400"></i>
+                <input type="email" id="email" name="email" class="form-input" placeholder="xyz@gmail.com" required>
+              </div>
+            </div>
+            <!-- Subject Input -->
+            <div class="relative mt-6">
+              <label for="subject" class="form-label">Subject</label>
+              <i data-lucide="book-text" class="absolute left-4 top-1/2 -translate-y-1/2 w-5 h-5 text-gray-400"></i>
+              <input type="text" id="subject" name="subject" class="form-input" placeholder="Project Inquiry / Job opportunity / Collaboration..." required>
+            </div>
+            <!-- Message Textarea -->
+            <div class="relative mt-6">
+              <label for="message" class="form-label">Message</label>
+              <i data-lucide="message-square" class="absolute left-4 top-6 w-5 h-5 text-gray-400"></i>
+              <textarea id="message" name="message" rows="5" class="form-input pt-4" placeholder="Tell me more about your project, your timeline, and what you're looking to achieve..." required></textarea>
+            </div>
+            <!-- Submit Button -->
+            <div class="mt-8">
+              <button type="submit" class="w-full bg-gradient-to-r from-indigo-500 to-purple-600 hover:from-indigo-600 hover:to-purple-700 text-white font-bold py-4 px-4 rounded-lg flex items-center justify-center space-x-2 transition-all duration-300">
+                <i data-lucide="send" class="w-5 h-5"></i>
+                <span>Send Message</span>
+              </button>
+            </div>
+            <p class="text-xs text-gray-500 mt-4 text-center">
+              I value your privacy. Your information will never be shared with third parties.
+            </p>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Don't forget to re-initialize Lucide Icons if you load this content dynamically -->
+<script>
+  if (window.lucide) {
+    lucide.createIcons();
+  }
+</script>

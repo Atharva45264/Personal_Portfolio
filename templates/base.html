@@ -1,0 +1,443 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>{% block title %}Atharva Portfolio{% endblock %}</title>
+
+    <!-- Tailwind CSS -->
+    <link
+      rel="stylesheet"
+      href="{{ url_for('static', filename='dist/output.css') }}"
+    />
+
+    <!-- AOS for animations -->
+    <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
+
+    <style>
+      /* --- Base Styles --- */
+      html {
+        scroll-behavior: smooth;
+      }
+
+      section[id] {
+        scroll-margin-top: 5rem; /* 112px. Adjust this value! */
+      }
+      /* --------------------- */
+      body {
+        background: radial-gradient(
+          ellipse at center,
+          #0f0f1d 0%,
+          #030014 100%
+        );
+        font-family: "Segoe UI", sans-serif;
+      }
+      .gradient-text {
+        background: linear-gradient(to right, #6366f1, #a855f7);
+        -webkit-background-clip: text;
+        background-clip: text;
+        color: transparent;
+      }
+
+      /* Contact Form Input & Label Styles */
+.form-label {
+  position: absolute;
+  top: 8px;
+  left: 48px; /* Aligns with text past the icon */
+  font-size: 0.75rem; /* 12px */
+  color: #9ca3af; /* text-gray-400 */
+}
+
+.form-input {
+  width: 100%;
+  background-color: #0f1221;
+  border: 1px solid #334155; /* border-slate-700 */
+  border-radius: 0.5rem; /* rounded-lg */
+  padding: 2rem 1rem 0.75rem 3rem; /* Top, Right, Bottom, Left padding */
+  color: #f1f5f9; /* text-slate-100 */
+  transition: border-color 0.2s ease;
+}
+
+.form-input:focus {
+  outline: none;
+  border-color: #6366f1; /* border-indigo-500 */
+  box-shadow: 0 0 0 2px rgba(99, 102, 241, 0.3);
+}
+
+/* Social Media Icon Styles */
+.social-icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 44px;
+  height: 44px;
+  background-color: rgba(255, 255, 255, 0.05);
+  border-radius: 9999px; /* rounded-full */
+  color: #9ca3af; /* text-gray-400 */
+  transition: all 0.3s ease;
+}
+
+.social-icon:hover {
+  background-color: #4f46e5; /* bg-indigo-600 */
+  color: #ffffff; /* text-white */
+  transform: translateY(-2px);
+}
+
+ .portfolio-section {
+            padding: 80px 24px;
+            text-align: center;
+        }
+
+        .portfolio-container {
+            max-width: 1100px;
+            margin: 0 auto;
+        }
+
+        .portfolio-title {
+            font-size: 2.75rem;
+            font-weight: 800;
+            background: linear-gradient(90deg, #A78BFA, #818CF8);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            margin-bottom: 16px;
+        }
+        
+        .portfolio-description {
+            color: #94A3B8;
+            max-width: 600px;
+            margin: 0 auto 48px auto;
+            font-size: 1.125rem;
+            line-height: 1.6;
+        }
+
+        .tabs-container {
+            display: flex;
+            justify-content: center;
+            max-width: max-content;
+            margin: 0 auto;
+        }
+
+        /* This is the class the JavaScript looks for on each button */
+        .tab-button {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            padding: 12px 24px;
+            font-size: 1rem;
+            font-weight: 600;
+            color: #94A3B8;
+            background-color: transparent;
+            border: none;
+            border-radius: 9999px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            margin: 0 5px;
+        }
+
+        .tab-button:hover {
+            color: #FFFFFF;
+        }
+        
+        /* This class is added/removed by JavaScript to show which tab is selected */
+        .tab-button.active {
+            background-color: #4F46E5;
+            color: #FFFFFF;
+            box-shadow: 0 4px 14px rgba(79, 70, 229, 0.3);
+        }
+
+        .tab-button svg {
+            width: 20px;
+            height: 20px;
+        }
+        
+        /* This is the class the JavaScript looks for on each content panel */
+        .tab-content {
+            margin-top: 48px;
+            display: grid;
+            gap: 24px;
+            grid-template-columns: repeat(1, 1fr);
+        }
+        
+        @media (min-width: 640px) {
+            #projects { grid-template-columns: repeat(2, 1fr); }
+        }
+        @media (min-width: 1024px) {
+            #projects { grid-template-columns: repeat(3, 1fr); }
+        }
+        
+        #certificates, #techstack {
+             grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+        }
+        
+        /* This class is added/removed by JavaScript to hide/show content */
+        .hidden {
+            display: none;
+        }
+
+        /* Other styles for cards, etc. */
+        .project-card, .asset-item {
+            background-color: rgba(30, 41, 59, 0.5);
+            border: 1px solid #334155;
+            border-radius: 16px;
+            overflow: hidden;
+            text-align: left;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        .project-card:hover, .asset-item:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.4);
+        }
+        .project-card-image { width: 100%; height: 180px; object-fit: cover; }
+        .project-card-body { padding: 24px; }
+        .project-card-title { font-size: 1.25rem; font-weight: 700; color: #F8FAFC; margin: 0 0 8px 0; }
+        .project-card-description { color: #94A3B8; font-size: 1rem; line-height: 1.5; min-height: 4.5em; }
+        .asset-item { padding: 16px; align-items: center; justify-content: center; display: flex; flex-direction: column; }
+        .asset-item p { font-weight: 600; color: #CBD5E1; margin-top: 12px; }
+        .tech-stack-icon { width: 64px; height: 64px; }
+
+        .project-link-button {
+  display: flex;
+  align-items: center;
+  justify-content: space-between; /* Pushes text left and arrow right */
+  width: 100%;
+  padding: 0.75rem 1rem; /* 12px 16px */
+  text-decoration: none;
+  font-weight: 600;
+  color: #d1d5db; /* text-gray-300 */
+  background-color: rgba(79, 70, 229, 0.1); /* Indigo background with opacity */
+  border: 1px solid #4f46e5; /* border-indigo-600 */
+  border-radius: 0.5rem; /* rounded-lg */
+  transition: all 0.3s ease;
+}
+
+.project-link-button:hover {
+  background-color: #4f46e5; /* bg-indigo-600 */
+  color: #ffffff; /* text-white */
+  transform: translateY(-2px);
+  box-shadow: 0 4px 15px rgba(79, 70, 229, 0.3);
+}
+
+.project-link-button i {
+  transition: transform 0.3s ease;
+}
+
+.project-link-button:hover i {
+  transform: translateX(4px); /* Move arrow slightly on hover */
+}
+
+#certificates {
+  grid-template-columns: repeat(1, 1fr);
+  gap: 1.5rem; /* 24px */
+}
+
+/* Medium screens and up (e.g., tablets) */
+@media (min-width: 768px) {
+  #certificates {
+    /* Switch to 2 columns on tablets */
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+/* Large screens and up (e.g., desktops) */
+@media (min-width: 1024px) {
+  #certificates {
+    /* Force 3 columns on desktops, making images larger */
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+/* Ensure the image and its container fill the space */
+#certificates .asset-item {
+  width: 100%;
+}
+
+/* Gradient, blink, tags, button, and icon styles */
+
+.gradient-text {
+  background: linear-gradient(to right, #6366f1 0%, #a855f7 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  color: transparent;
+}
+
+@keyframes blink {
+  0%, 100% { opacity: 1; }
+  50%      { opacity: 0; }
+}
+.animate-blink {
+  animation: blink 1s steps(1) infinite;
+}
+
+.tech-badge {
+  background: rgba(129, 140, 248, 0.10);
+  border: 1.5px solid #6d28d9;
+  color: #c7d2fe;
+  padding: 0.4rem 1.1rem;
+  border-radius: 9999px;
+  font-size: 0.97rem;
+  font-weight: 600;
+  letter-spacing: 0.01em;
+  box-shadow: 0 1.5px 12px 0 rgba(129, 140, 248, 0.08);
+  transition: background 0.23s, color 0.23s, border 0.23s;
+}
+
+.tech-badge:hover {
+  background: linear-gradient(90deg, #818cf8, #a78bfa);
+  transform: translateY(-2px) scale(1.06);
+  cursor: pointer;
+}
+
+/* Action Buttons */
+.main-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  padding: 0.85rem 1.9rem;
+  font-weight: 700;
+  font-size: 1.07rem;
+  border-radius: 0.6rem;
+  color: #fff;
+  background: linear-gradient(90deg, #6366f1, #a855f7);
+  box-shadow: 0 4px 18px 0 rgba(129, 140, 248, 0.06);
+  border: none;
+  text-decoration: none;
+  transition: background .25s, transform .2s;
+}
+.main-btn:hover {
+  background: linear-gradient(90deg, #818cf8, #a78bfa);
+  transform: translateY(-2px) scale(1.06);
+}
+.main-btn.secondary {
+  background: none;
+  color: #a78bfa;
+  border: 1.2px solid #818cf8;
+  box-shadow: none;
+}
+.main-btn.secondary:hover {
+  background: rgba(129, 140, 248, 0.12);
+  color: #c4b5fd;
+}
+
+/* Social Icons (same as previous answer) */
+.social-icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 46px;
+  height: 46px;
+  background-color: rgba(99, 102, 241, 0.075);
+  border-radius: 9999px;
+  color: #9ca3af;
+  font-size: 1.62rem;
+  transition: all 0.23s cubic-bezier(.4,0,.2,1);
+  box-shadow: 0 2px 10px 0 rgba(128, 90, 213, 0.10);
+}
+.social-icon:hover {
+  background-color: #6366f1;
+  color: #fff;
+  transform: translateY(-3px) scale(1.09);
+  box-shadow: 0 6px 23px 0 rgba(99,102,241,0.16);
+}
+
+/* Responsive image */
+@media (max-width: 1024px) {
+  #home img { max-width: 360px; }
+}
+
+.icon-btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 54px;
+  height: 54px;
+  border-radius: 9999px;
+  background: rgba(22, 22, 35, 0.79);
+  box-shadow: 0 6px 30px 0 rgba(129, 140, 248, 0.15);
+  transition: background 0.2s, color 0.18s, box-shadow 0.18s;
+  color: #bdb4e5;
+  border: 1.5px solid rgba(129, 140, 248, 0.16);
+  font-size: 1.68rem;
+}
+.icon-btn:hover {
+  background: #5546aa;
+  color: #fff;
+  box-shadow: 0 9px 32px 0 rgba(129, 140, 248, 0.23);
+}
+
+.innovate-badge {
+  background: rgba(36, 33, 82, 0.60);            /* Deep glassy backdrop */
+  border-radius: 9999px;                          /* Fully rounded, pill shape */
+  padding: 0.45em 1.35em;
+  font-size: 1rem;
+  font-weight: 600;
+  color: #a78bfa;                                 /* Soft purple text */
+  border: 1.5px solid rgba(129, 140, 248, 0.22);  /* Subtle purple border */
+  box-shadow: 0 4px 22px 0 rgba(129, 140, 248, 0.13);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  letter-spacing: 0.01em;
+}
+
+.innovate-badge i {
+  color: #818cf8;         /* Indigo icon accent */
+  filter: drop-shadow(0 1px 3px #818cf880);
+}
+
+    </style>
+  </head>
+
+  <body class="text-white">
+    <!-- Navbar -->
+    <nav
+      class="sticky top-0 z-50 bg-[#0f0f1d]/80 backdrop-blur border-b border-white/10"
+    >
+      <div
+        class="max-w-7xl mx-auto px-10 py-8 flex items-center justify-between"
+      >
+        <h1 class="text-4xl font-bold gradient-text">Atharva's Portfolio</h1>
+        <ul class="flex space-x-6 text-sm font-medium">
+          <li>
+            <a href="#home" class="text-2xl hover:text-indigo-400 transition"
+              >Home</a
+            >
+          </li>
+          <li>
+            <a href="#about" class="text-2xl hover:text-indigo-400 transition"
+              >About</a
+            >
+          </li>
+          <li>
+            <a
+              href="#portfolio"
+              class="text-2xl hover:text-indigo-400 transition"
+              >Portfolio</a
+            >
+          </li>
+          <li>
+            <a href="#contact" class="text-2xl hover:text-indigo-400 transition"
+              >Contact</a
+            >
+          </li>
+        </ul>
+      </div>
+    </nav>
+
+    <!-- Page content will be injected here -->
+    {% block content %}{% endblock %}
+
+    <!-- --- All JavaScript is loaded here --- -->
+    <!-- Third-party libraries -->
+    <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+    <script src="https://unpkg.com/lucide@latest/dist/umd/lucide.min.js"></script>
+    <script src="https://kit.fontawesome.com/a2e8cf58e4.js" crossorigin="anonymous"></script>
+
+    <!-- Your main local script file (must be last) -->
+    <script
+      src="{{ url_for('static', filename='scripts/home.js') }}"
+      defer
+    ></script>
+  </body>
+</html>

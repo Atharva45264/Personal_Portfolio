@@ -1,0 +1,97 @@
+{% extends "base.html" %} {% block title %}Home | Atharva Portfolio{% endblock
+%} {% block content %}
+
+<!-- Hero Section -->
+<!-- Hero Section -->
+<!---<h1 class="text-5xl lg:text-6xl font-extrabold leading-tight">
+<span class="gradient-text">Frontend Developer</span>
+</h1>-->
+<section
+  id="home"
+  class="min-h-screen flex items-center justify-center scroll-mt-32 px-6 bg-transparent"
+>
+  <div
+    class="max-w-7xl w-full flex flex-col-reverse lg:flex-row items-center justify-between gap-8 lg:gap-14 pt-24 lg:pt-8"
+  >
+    <!-- Left: Content -->
+    <div class="space-y-5 lg:space-y-7 w-full lg:w-2/3">
+   <span class="innovate-badge inline-flex items-center space-x-3">
+  <span>✨</span>Ready to Innovate<span>✨</span>
+</span>
+<br>
+<br>
+      <h1 class="text-5xl lg:text-6xl font-extrabold leading-tight">
+        Frontend <br />
+        <span class="gradient-text">Developer</span>
+      </h1>
+      <br>
+      <div
+        class="font-semibold text-gray-300 text-3xl sm:text-lg flex items-center"
+      >
+        <span id="typewriter-text">Information Technology Student&nbsp;</span>
+        <span class="animate-blink text-indigo-400 font-black">|</span>
+      </div>
+      <br>
+      <!-- Tech tags -->
+      <div class="flex flex-wrap gap-4 mb-3">
+        <span class="tech-badge">Html</span>
+        <span class="tech-badge">Css</span>
+        <span class="tech-badge">JavaScript</span>
+        <span class="tech-badge">Python</span>
+      </div>
+      <br>
+      <!-- Buttons -->
+      <div class="flex gap-4 mt-4">
+        <a href="#portfolio" class="main-btn secondary"> Projects  <span>💻 </span> </a>
+        <a href="#contact" class="main-btn secondary">
+          <span>Contact</span>
+          <svg
+            class="w-5 h-5 ml-2 inline"
+            fill="none"
+            stroke="currentColor"
+            stroke-width="2"
+            viewBox="0 0 24 24"
+          >
+            <path d="M4 4h16v16H4V4zm2 4l6 4.5L18 8" />
+          </svg>
+        </a>
+      </div>
+      <br>
+      <div >
+          <!-- Social Icons Row -->
+  <div class="flex justify-left gap-8 mt-12">
+    <a href="#" class="icon-btn" aria-label="GitHub">
+      <i data-lucide="github" class="w-7 h-7"></i>
+    </a>
+    <a href="#" class="icon-btn" aria-label="LinkedIn">
+      <i data-lucide="linkedin" class="w-7 h-7"></i>
+    </a>
+    <a href="#" class="icon-btn" aria-label="Instagram">
+      <i data-lucide="instagram" class="w-7 h-7"></i>
+    </a>
+  </div>
+      </div>
+    </div>
+
+    <!-- Right: Illustration -->
+    <div class="w-full lg:w-1/3 flex justify-center items-center">
+      <img
+        src="{{ url_for('static', filename='images/coding2.gif') }}"
+        alt="Hero Illustration"
+        class="w-full h-auto max-w-xs lg:max-w-md drop-shadow-xl rounded-lg object-contain"
+        style="min-height: 200px"
+      />
+    </div>
+  </div>
+  
+
+</section>
+
+<!-- About Section -->
+{% include 'partials/about.html' %}
+
+<!-- Portfolio Section -->
+{% include 'partials/portfolio.html' %}
+
+<!-- Contact Section -->
+{% include 'partials/contact.html' %} {% endblock %}
