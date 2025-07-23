@@ -1,66 +1,82 @@
 <section id="about" class="px-12 py-28 scroll-mt-24">
+  <!-- Title: About Me -->
   <div class="text-center mb-10">
-    <h2 class="text-5xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-indigo-500 to-purple-500" data-aos="zoom-in-up">About Me</h2>
-    <p class="mt-5 text-gray-400 flex justify-center items-center gap-2 text-3xl" data-aos="zoom-in-up">
+    <h2 class="text-5xl font-bold text-[#ba181b]" data-aos="zoom-in-up">
+      About Me
+    </h2>
+    <p class="mt-5 text-black flex justify-center items-center gap-2 text-3xl" data-aos="zoom-in-up">
       <span>✨</span> Crafting visions into interactive realities. <span>✨</span>
     </p>
   </div>
 
   <div class="grid lg:grid-cols-2 gap-10 items-center">
-    <!-- Left -->
+    <!-- Left: Bio -->
     <div class="text-center lg:text-left space-y-6">
-      <h2 class="text-4xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-indigo-500 to-purple-500" data-aos="fade-right">Hello, I'm</h2>
-      <p class="text-3xl text-gray-200 font-bold" data-aos="fade-right" data-aos-delay="200">Atharva Phanse</p>
-      <p class="text-xl text-gray-400 leading-relaxed" data-aos="fade-right" data-aos-delay="400">
-        I am a 4th year Information Technology student at Atharva College of Engineering, specializing in frontend technologies and web development. I have a strong passion for building clean, efficient, and responsive user interfaces.My interests extend to artificial intelligence and machine learning, where I have gained intermediate expertise in Python. I am proactive in learning new tools and frameworks, and I consistently seek opportunities to apply modern tech to real-world problems.
+      <h2 class="text-4xl font-bold text-[#ba181b]" data-aos="fade-right">
+        Hello, I'm
+      </h2>
+      <p class="text-3xl font-bold text-black" data-aos="fade-right" data-aos-delay="200">
+        Atharva Phanse
+      </p>
+      <p class="text-xl text-black leading-relaxed" data-aos="fade-right" data-aos-delay="400">
+        I am a 4th year Information Technology student at Atharva College of Engineering, specializing in frontend technologies and web development. I have a strong passion for building clean, efficient, and responsive user interfaces. My interests extend to artificial intelligence and machine learning, where I have gained intermediate expertise in Python. I am proactive in learning new tools and frameworks, and I consistently seek opportunities to apply modern tech to real-world problems.
       </p>
       <div class="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start" data-aos="fade-up">
-        <a href="{{ url_for('static', filename='src/resume/resume_atharva.pdf') }}" download target="_blank" class="px-6 py-3 bg-gradient-to-r from-indigo-500 to-purple-500 rounded-lg font-medium hover:scale-105 transition-transform">
+        <a
+          href="{{ url_for('static', filename='src/resume/resume_atharva.pdf') }}"
+          download
+          target="_blank"
+          class="px-6 py-3 bg-[#ba181b] text-white font-medium rounded-lg hover:bg-[#e5383b] hover:scale-105 transition-transform"
+        >
           📄 Download Resume
         </a>
-        <a href="#portfolio" class="px-6 py-3 border border-purple-400 text-purple-400 rounded-lg font-medium hover:bg-purple-500/10 hover:scale-105 transition-transform">
+        <a
+          href="#portfolio"
+          class="px-6 py-3 border border-[#ba181b] text-[#ba181b] rounded-lg font-medium hover:bg-[#ba181b]/10 hover:scale-105 transition-transform"
+        >
           💻 View Projects
         </a>
       </div>
     </div>
 
-    <!-- Right -->
+    <!-- Right: Profile Image -->
     <div class="flex justify-center" data-aos="fade-up">
       <div class="relative w-72 h-72 rounded-full overflow-hidden shadow-lg group">
-        <img src="{{ url_for('static', filename='images/Atharva_photo.png') }}" alt="Profile" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110 group-hover:rotate-2" />
+        <img
+          src="{{ url_for('static', filename='images/Atharva_photo.png') }}"
+          alt="Profile"
+          class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110 group-hover:rotate-2"
+        />
         <div class="absolute inset-0 border-4 border-white/20 rounded-full group-hover:border-white/40 transition-all"></div>
         <div class="absolute -inset-6 opacity-25 hidden sm:block">
-          <div class="absolute inset-0 bg-gradient-to-r from-violet-600 via-indigo-500 to-purple-600 rounded-full blur-2xl animate-spin-slower"></div>
+          <div class="absolute inset-0 bg-gradient-to-r from-[#e5383b] via-[#ba181b] to-[#8a0f11] rounded-full blur-2xl animate-spin-slower"></div>
         </div>
       </div>
     </div>
   </div>
 
-<div class="grid grid-cols-1 md:grid-cols-3 gap-6 mt-16 text-center">
-  <a href="#portfolio" class="block">
-    <div class="bg-gray-900/50 p-6 rounded-2xl border border-white/10 hover:scale-105 transition-transform" data-aos="fade-right">
-      <div class="text-4xl font-bold text-white">7</div>
-      <p class="text-purple-400 mt-2">Total Projects</p>
-      <p class="text-sm text-gray-400 mt-1">Innovative web solutions crafted</p>
-    </div>
-  </a>
-  <a href="#portfolio" class="block">
-    <div class="bg-gray-900/50 p-6 rounded-2xl border border-white/10 hover:scale-105 transition-transform" data-aos="fade-up">
-      <div class="text-4xl font-bold text-white">6</div>
-      <p class="text-purple-400 mt-2">Certificates</p>
-      <p class="text-sm text-gray-400 mt-1">Professional skills validated</p>
-    </div>
-  </a>
-  <a href="#about" class="block">
-    <div class="bg-gray-900/50 p-6 rounded-2xl border border-white/10 hover:scale-105 transition-transform" data-aos="fade-left">
-      <div class="text-4xl font-bold text-white">3</div>
-      <p class="text-purple-400 mt-2">Years of Experience</p>
-      <p class="text-sm text-gray-400 mt-1">Continuous learning journey</p>
-    </div>
-  </a>
-</div>
+  <!-- Stats Grid -->
+  <div class="grid grid-cols-1 md:grid-cols-3 gap-6 mt-16 text-center">
+    <a href="#portfolio" class="block">
+      <div class="bg-white p-6 rounded-2xl border border-[#ba181b]/30 hover:scale-105 transition-transform" data-aos="fade-right">
+        <div class="text-4xl font-bold text-[#ba181b]">7</div>
+        <p class="mt-2 font-semibold text-[#ba181b]">Total Projects</p>
+        <p class="text-sm text-black mt-1">Innovative web solutions crafted</p>
+      </div>
+    </a>
+    <a href="#portfolio" class="block">
+      <div class="bg-white p-6 rounded-2xl border border-[#ba181b]/30 hover:scale-105 transition-transform" data-aos="fade-up">
+        <div class="text-4xl font-bold text-[#ba181b]">6</div>
+        <p class="mt-2 font-semibold text-[#ba181b]">Certificates</p>
+        <p class="text-sm text-black mt-1">Professional skills validated</p>
+      </div>
+    </a>
+    <a href="#about" class="block">
+      <div class="bg-white p-6 rounded-2xl border border-[#ba181b]/30 hover:scale-105 transition-transform" data-aos="fade-left">
+        <div class="text-4xl font-bold text-[#ba181b]">3</div>
+        <p class="mt-2 font-semibold text-[#ba181b]">Years of Experience</p>
+        <p class="text-sm text-black mt-1">Continuous learning journey</p>
+      </div>
+    </a>
+  </div>
 </section>
-
-
-
-
