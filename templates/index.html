@@ -1,18 +1,13 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Welcome Screen</title>
-  <!-- Font Awesome for icons -->
+  <!-- Font Awesome -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
-  <!-- AOS Animation CSS -->
+  <!-- AOS Animation -->
   <link href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css" rel="stylesheet">
-  <!-- Sweetalert2 (optional, remove if not needed) -->
-  <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
-  <!-- Your custom CSS -->
-  <link rel="stylesheet" href="{{ url_for('static', filename='src/style.css') }}">
-  <link rel="stylesheet" href="{{ url_for('static', filename='dist/output.css') }}">
   <style>
     body, html {
       margin: 0;
@@ -45,12 +40,12 @@
       border-radius: 50%;
     }
     .background-effect::before {
-      background: linear-gradient(to right, rgba(79, 70, 229, 0.2), rgba(168, 85, 247, 0.2));
+      background: linear-gradient(to right, rgba(229, 56, 59, 0.28), rgba(186, 24, 27, 0.28));
       filter: blur(80px);
       animation: pulse 6s infinite;
     }
     .background-effect::after {
-      background: linear-gradient(to top right, rgba(79, 70, 229, 0.1), transparent, rgba(168, 85, 247, 0.1));
+      background: linear-gradient(to top right, rgba(229, 56, 59, 0.1), transparent, rgba(186, 24, 27, 0.08));
       filter: blur(120px);
       animation: float 10s infinite;
     }
@@ -90,16 +85,16 @@
     }
     .icon-btn i {
       color: white;
-      font-size: 24px;
+      font-size: 30px;
     }
     .title span {
       display: inline-block;
       padding: 5px 10px;
-      font-size: 2.5rem;
+      font-size: 3.5rem;
       font-weight: bold;
     }
     .highlight {
-      background: linear-gradient(to right, #4f46e5, #a855f7);
+      background: linear-gradient(to right, #e5383b, #ba181b);
       background-clip: text;
       -webkit-background-clip: text;
       color: transparent;
@@ -120,24 +115,35 @@
     }
     .link-btn:hover {
       transform: scale(1.05);
+      background: rgba(255, 255, 255, 0.08);
     }
     .link-btn i {
-      color: #6366f1;
+      color: #e5383b;
     }
     .cursor {
       animation: blink 1s infinite;
+      font-weight: 700;
+      color: #fff;
+      margin-left: 3px;
     }
     @keyframes blink {
       0%, 100% { opacity: 1; }
       50% { opacity: 0; }
     }
+    #typewriter {
+      font-size: 1.8rem;
+      font-family: 'Courier New', Courier, monospace;
+      letter-spacing: 1.5px;
+      font-weight: 600;
+      color: white;
+    }
     /* Responsive for mobile */
     @media (max-width: 650px) {
-      .content { font-size: 1,5rem;}
-      .title span { font-size: 3rem;}
+      .content { font-size: 1.5rem; }
+      .title span { font-size: 3rem; }
       .link-btn { font-size: 1.5rem; padding: 10px 18px; }
-      .icon-btn i { font-size: 2rem;}
-      #typewriter { font-size: 2rem;}
+      .icon-btn i { font-size: 2rem; }
+      #typewriter { font-size: 2rem; }
     }
   </style>
 </head>
@@ -161,21 +167,17 @@
       </h1>
       <a href="https://www.atharva.my.id" target="_blank" class="link-btn" data-aos="fade-up" data-aos-delay="1200">
         <i class="fas fa-globe"></i>
-        <span id="typewriter"></span>
+        <span id="typewriter">www.atharva.my.id</span>
         <span class="cursor">|</span>
       </a>
     </div>
   </div>
   <!-- AOS Animation JS -->
   <script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>
-  <!-- IF you have home.js in static/scripts, UNCOMMENT the line below -->
-  {# <script src="{{ url_for('static', filename='scripts/home.js') }}"></script> #}
   <script>
-    // AOS init
     AOS.init({ duration: 1000, once: false, mirror: false });
-
     // Typewriter effect
-    const text = "www.eki.my.id";
+    const text = "www.atharva.my.id";
     const target = document.getElementById("typewriter");
     let index = 0;
     function typeWriter() {
@@ -186,11 +188,10 @@
       }
     }
     typeWriter();
-
-    // REDIRECT TO HOME ROUTE AFTER 6 SECONDS
+    // Redirect after 6 seconds
     setTimeout(() => {
       window.location.href = "/home";
-    }, 6000);
+    }, 10000);
   </script>
 </body>
 </html>
