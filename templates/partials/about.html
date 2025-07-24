@@ -1,9 +1,9 @@
 <section id="about" class="px-12 py-28 scroll-mt-24">
   <!-- Title: About Me -->
   <div class="text-center mb-10">
-    <h2 class="text-5xl font-bold text-[#ba181b]" data-aos="zoom-in-up">
+    <h1 class="text-5xl font-bold text-[#ba181b]" data-aos="zoom-in-up">
       About Me
-    </h2>
+    </h1>
     <p class="mt-5 text-black flex justify-center items-center gap-2 text-3xl" data-aos="zoom-in-up">
       <span>✨</span> Crafting visions into interactive realities. <span>✨</span>
     </p>
@@ -21,22 +21,22 @@
       <p class="text-xl text-black leading-relaxed" data-aos="fade-right" data-aos-delay="400">
         I am a 4th year Information Technology student at Atharva College of Engineering, specializing in frontend technologies and web development. I have a strong passion for building clean, efficient, and responsive user interfaces. My interests extend to artificial intelligence and machine learning, where I have gained intermediate expertise in Python. I am proactive in learning new tools and frameworks, and I consistently seek opportunities to apply modern tech to real-world problems.
       </p>
-      <div class="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start" data-aos="fade-up">
-        <a
-          href="{{ url_for('static', filename='src/resume/resume_atharva.pdf') }}"
-          download
-          target="_blank"
-          class="px-6 py-3 bg-[#ba181b] text-white font-medium rounded-lg hover:bg-[#e5383b] hover:scale-105 transition-transform"
-        >
-          📄 Download Resume
-        </a>
-        <a
-          href="#portfolio"
-          class="px-6 py-3 border border-[#ba181b] text-[#ba181b] rounded-lg font-medium hover:bg-[#ba181b]/10 hover:scale-105 transition-transform"
-        >
-          💻 View Projects
-        </a>
-      </div>
+<div class="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start" data-aos="fade-up">
+  <a
+    href="{{ url_for('static', filename='src/resume/resume_atharva.pdf') }}"
+    download
+    target="_blank"
+    class="px-6 py-3 font-medium border rounded-lg transition-transform flex items-center justify-center download-resume-btn"
+  >
+    📄 Download Resume
+  </a>
+  <a
+    href="#portfolio"
+    class="px-6 py-3 border rounded-lg font-medium transition-transform flex items-center justify-center view-projects-btn"
+  >
+    💻 View Projects
+  </a>
+</div>
     </div>
 
     <!-- Right: Profile Image -->
