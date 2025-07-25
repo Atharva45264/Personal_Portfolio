@@ -58,7 +58,7 @@ a:hover {
 /* Form Input */
 .form-input {
   width: 100%;
-  background-color: #0f1221;
+  background-color:wheat;
   border: 1px solid #ff4d6d;
   border-radius: 0.5rem; /* rounded-lg */
   padding: 2rem 1rem 0.75rem 3rem;
@@ -72,6 +72,11 @@ a:hover {
   box-shadow: 0 0 0 2px rgba(255, 77, 109, 0.3);
 }
 
+.form-label{
+  font-size: 1rem;
+  font-weight: bold;
+}
+
 /* Social Icons */
 .social-icon {
   display: flex;
@@ -79,7 +84,7 @@ a:hover {
   justify-content: center;
   width: 46px;
   height: 46px;
-  background-color: #e5383b; /* Darker Red */
+  background-color: #ff4d6d; /* Darker Red */
   border-radius: 9999px; /* Full rounded (pill) */
   color: white;
   font-size: 1.62rem;
@@ -93,6 +98,97 @@ a:hover {
   transform: translateY(-3px) scale(1.09);
   box-shadow: 0 6px 23px 0 rgba(255, 77, 109, 0.16);
 }
+
+.contact-section {
+  text-align: center;
+}
+
+.contact-badge {
+  display: inline-block;
+  background:  rgba(255,77,109,0.14); /* 10% opacity version of #ba181b */
+  color: #ff4d6d;
+  font-size: 0.95rem;
+  font-weight: 600;
+  padding: 0.25rem 1rem;
+  border-radius: 9999px;
+  margin-bottom: 1rem;
+}
+
+.contact-title {
+  font-size: 3.5rem; /* Increase or adjust as needed */
+  font-weight: bold;
+  color: #ff4d6d;
+  margin-top: 0.6rem;
+  margin-bottom: 1.2rem;
+}
+
+.contact-description {
+  color: #fff;
+  font-size: 1.5rem; /* A bit larger than text-lg */
+  max-width: 50rem;
+  margin: 1.5rem auto 0 auto;
+  line-height: 1.6;
+}
+
+/* Add this CSS to your stylesheet or in a <style> tag */
+.location-icon-bg {
+  background: #ff4d6d !important;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.location-icon {
+  color: #fff !important;
+}
+
+.email-icon-bg {
+  background: #ff4d6d !important;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.email-icon {
+  color: #fff !important;
+}
+
+.contact-info{
+  background-color: #ff758f;
+}
+
+.response-card{
+  background-color: #ff758f;
+}
+
+.right-form{
+  background-color: #ff758f;
+}
+
+.custom-send-btn {
+  width: 100%;
+  background: linear-gradient(to right, #ff4d6d, #e0435b);
+  color: #fff;
+  font-weight: bold;
+  padding: 1rem;
+  border-radius: 0.5rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  transition: background 0.3s;
+  border: none;
+  cursor: pointer;
+}
+.custom-send-btn:hover {
+  background: linear-gradient(to right, #e0435b, #ba181b);
+}
+
+
+
+/* Optional: To ensure icon color consistency across browsers */
+.location-icon svg {
+  fill: #fff !important;
+}
+
 
 
 /* Portfolio Section */
