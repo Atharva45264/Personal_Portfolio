@@ -5,13 +5,14 @@
   <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
 
     <!-- Section Header -->
-    <div class="text-center">
-      <span class="inline-block bg-indigo-600/10 text-indigo-400 text-sm font-semibold px-4 py-1 rounded-full">Get In Touch</span>
-      <h2 class="text-5xl font-bold text-transparent bg-clip-text" style="background-color: bg-#ff4d6d;" data-aos="zoom-in-up">Let's Connect</h2>
-      <p class="mt-4 text-lg text-gray-400 max-w-2xl mx-auto">
-        Got a project in mind? Drop me a message and let's create something amazing together!
-      </p>
-    </div>
+    <div class="text-center contact-section">
+  <span class="contact-badge">Get In Touch</span>
+  <h2 class="contact-title" data-aos="zoom-in-up">Let's Connect</h2>
+  <p class="contact-description">
+    Got a project in mind? Drop me a message and let's create something amazing together!
+  </p>
+</div>
+
 
     <!-- Main Grid: Contact Info + Form -->
     <div class="mt-16 grid grid-cols-1 lg:grid-cols-5 gap-8">
@@ -19,27 +20,27 @@
       <!-- Left Column: Contact Information -->
       <div class="lg:col-span-2 space-y-8">
         <!-- Contact Info Card -->
-        <div class="bg-[#161a2c] p-8 rounded-2xl">
+        <div class="contact-info p-8 rounded-2xl">
           <h3 class="text-2xl font-bold text-white mb-6">Contact Information</h3>
           <div class="space-y-6">
             <!-- Email -->
             <div class="flex items-start space-x-4">
-              <div class="bg-indigo-600/10 p-2 rounded-full">
-                <i data-lucide="mail" class="w-5 h-5 text-indigo-400"></i>
+              <div class="email-icon-bg p-2 rounded-full">
+                <i data-lucide="mail" class="w-5 h-5 email-icon"></i>
               </div>
               <div>
                 <h4 class="font-semibold text-lg">Email</h4>
-                <p class="text-gray-400">atharvaphanse403@gmail.com</p>
+                <p class="text-gray-700">atharvaphanse403@gmail.com</p>
               </div>
             </div>
             <!-- Location -->
             <div class="flex items-start space-x-4">
-              <div class="bg-indigo-600/10 p-2 rounded-full">
-                <i data-lucide="map-pin" class="w-5 h-5 text-indigo-400"></i>
+              <div class="location-icon-bg p-2 rounded-full">
+                <i data-lucide="map-pin" class="w-5 h-5 location-icon"></i>
               </div>
               <div>
                 <h4 class="font-semibold text-lg">Location</h4>
-                <p class="text-gray-400">Mumbai, Maharashtra, India</p>
+                <p class="text-gray-700">Mumbai, Maharashtra, India</p>
               </div>
             </div>
           </div>
@@ -63,15 +64,15 @@
 </div>
         </div>
         <!-- Response Time Card -->
-        <div class="bg-[#161a2c] p-8 rounded-2xl">
+        <div class="response-card p-8 rounded-2xl">
           <h3 class="text-lg font-semibold">Response Time</h3>
-          <p class="text-gray-400 mt-2">I typically reply within 24 hours</p>
+          <p class="text-gray-700 mt-2">I typically reply within 24 hours</p>
         </div>
       </div>
 
       <!-- Right Column: Contact Form -->
       <div class="lg:col-span-3">
-        <div class="bg-[#161a2c] p-8 rounded-2xl">
+        <div class="right-form p-8 rounded-2xl">
           <form action="#" method="POST">
             <div class="grid grid-cols-1 sm:grid-cols-2 gap-6">
               <!-- Name Input -->
@@ -101,12 +102,14 @@
             </div>
             <!-- Submit Button -->
             <div class="mt-8">
-              <button type="submit" class="w-full bg-gradient-to-r from-indigo-500 to-purple-600 hover:from-indigo-600 hover:to-purple-700 text-white font-bold py-4 px-4 rounded-lg flex items-center justify-center space-x-2 transition-all duration-300">
-                <i data-lucide="send" class="w-5 h-5"></i>
-                <span>Send Message</span>
-              </button>
+<button type="submit" class="custom-send-btn">
+  <i data-lucide="send" class="w-5 h-5"></i>
+  <span>Send Message</span>
+</button>
+
+
             </div>
-            <p class="text-xs text-gray-500 mt-4 text-center">
+            <p class="text-xs text-gray-700 mt-4 text-center">
               I value your privacy. Your information will never be shared with third parties.
             </p>
           </form>
